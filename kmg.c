@@ -11,8 +11,6 @@
 #include <kmg/kmg.h>
 #include <assert.h>
 
-CVSID("$Id: kmg.c,v 1.2 2003/04/24 02:52:42 bardtx Exp $");
-
 /* This (tiny) library implements a "KMG" format loader. This format is
    intended to be a KOS-specific format for loading platform specific
    image formats directly from the VFS. To put this more clearly, this
