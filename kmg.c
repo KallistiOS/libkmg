@@ -8,8 +8,8 @@
 */
 
 #include <kos.h>
-#include <kmg/kmg.h>
 #include <assert.h>
+#include "kmg.h"
 
 /* This (tiny) library implements a "KMG" format loader. This format is
    intended to be a KOS-specific format for loading platform specific
@@ -101,7 +101,7 @@ int kmg_to_img(const char * fn, kos_img_t * rv) {
 		free(rv->data);
 		return -5;
 	}
-	
+
 	rv->byte_count = hdr.byte_count;
 
 	/* And load the rest of it if necessary */
@@ -131,7 +131,6 @@ int kmg_to_img(const char * fn, kos_img_t * rv) {
 	/* If the byte count is not a multiple of 32, bump it up as well.
 	   This is for DMA/SQ usage. */
 	rv->byte_count = (rv->byte_count + 31) & ~31;
-	
+
 	return 0;
 }
-

@@ -5,6 +5,7 @@
 
 TARGET = libkmg.a
 OBJS = kmg.o
+KOS_CFLAGS += -Iinclude
 
 defaultall: create_kos_link $(OBJS) subdirs linklib
 
@@ -14,4 +15,3 @@ include $(KOS_BASE)/addons/Makefile.prefab
 create_kos_link:
 	rm -f ../include/kmg
 	ln -s ../libkmg/include ../include/kmg
-
